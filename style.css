@@ -1,5 +1,7 @@
 body{
+    background-image: linear-gradient( rgb(255, 255, 255), #85c3f9);
     font-family: "Open Sans";
+    margin: 0px;
 }
 
 p{
@@ -33,7 +35,6 @@ p{
 }
 
 .navbar ul{
-    background-color: rgb(255, 255, 255);
     list-style-type: none;
     padding:0px
 }
@@ -56,7 +57,6 @@ p{
 }
 
 .aboutus{
-    background-color: white;
     position: relative;
     text-align: center;
     color: white;
@@ -79,10 +79,68 @@ p{
 .bio{
     float: center;
     max-width: 900px;
-    color: #66696B;
+    color: #414547;
     margin: 40px auto 0px;
     font-family: "Open Sans";
     line-height: 1.6;
     padding: 0 20px;
 }
 
+footer{
+    background-color: #7aafff;
+    padding: 30px;
+    text-align: center;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+
+footer a{
+    padding: 15px;
+    font-family: "Open Sans";
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+footer a:hover{
+    font-family: "Open Sans";
+    color: red;
+    text-decoration: underline;
+}
+
+.gallery{
+    text-align: center;
+    display: inline-block;
+    margin-left: 110px;
+    margin-right: 110px;
+    margin-top: 110px;
+    margin-bottom: 110px;
+}
+
+.gallery .description{
+    padding: 15px;
+    text-align: center;
+}
+
+
+.gallery .description a{
+    text-align: center;
+    color: black;
+    text-decoration: none;
+}
+.gallery .description p{
+    max-width: 400px;
+    padding: 15px;
+    text-align: center;
+    color: black;
+    text-decoration: none;
+}
+
+.gallery .description a:hover{
+    color: red;
+    text-decoration: none;
+}
+
+.gallery img{
+    border-radius: 15px;
+    width: 400px;
+}
