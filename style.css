@@ -66,6 +66,9 @@ p{
     border-radius: 15px;
     overflow: hidden;
     height: 300px;
+    margin-bottom: 90px;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 90px;
 }
 
