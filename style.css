@@ -219,6 +219,7 @@ footer a:hover{
 
 .slider img{
     position: relative;
+    width: 100%;
     flex: 1 0 100%;
     scroll-snap-align: start;
     object-fit: cover;
@@ -253,6 +254,8 @@ footer a:hover{
     display: flex;
     flex: 1 0 100%;
     z-index: 10;
+    align-items: center;
+    justify-content: center;
 }
 
 .slide img {
@@ -271,6 +274,7 @@ footer a:hover{
     background-color: rgba(0, 0, 0, 0.5);
     padding: 5px 10px;
     border-radius: 5px;
+    text-align: center;
 }
 
 .slide-title a{
@@ -282,4 +286,13 @@ footer a:hover{
 
 .slider::-webkit-scrollbar {
     display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .slide-title a {
+        font-size: 24px; /* Reduce font size for mobile */
+    }
+    .slider-wrapper {
+        padding: 20px; /* Reduce padding for mobile */
+    }
 }
