@@ -106,7 +106,7 @@ p{
 }
 
 footer{
-    background-image: linear-gradient( to bottom, #5ba2ff, #f7f7f7);;
+    background-image: linear-gradient( to bottom, #717171, #d3d3d3);;
     padding: 30px;
     text-align: center;
     text-decoration: none;
@@ -198,6 +198,9 @@ footer a:hover{
 } 
 
 .container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 2rem;
 }
 
@@ -251,15 +254,16 @@ footer a:hover{
 }
 
 .slide {
+    aspect-ratio: 16/9;
     position: relative;
     display: flex;
     flex: 1 0 100%;
     z-index: 10;
-    align-items: center;
-    justify-content: center;
+    object-fit: cover;
 }
 
 .slide img {
+    align-items: center;
     position: relative;
     flex: 1 0 100%;
     scroll-snap-align: start;
@@ -270,7 +274,8 @@ footer a:hover{
     z-index: 10;
     position: absolute;
     top: 45%;
-    left: 30%;
+    margin-left: 40%;
+    margin-right: 40%;
     color: #fff;
     background-color: rgba(0, 0, 0, 0.5);
     padding: 5px 10px;
@@ -279,6 +284,8 @@ footer a:hover{
 }
 
 .slide-title a{
+    align-items: center;
+    justify-content: center;
     text-decoration: none;
     font-size: 48px;
     color: white;
