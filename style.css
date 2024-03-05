@@ -7,7 +7,7 @@
 }
 body
 {
-    background-color: rgb(18, 0, 51);
+    background-color: rgb(20, 0, 58);
     font-family: "Fira Sans", sans-serif;
 }
 
@@ -22,7 +22,7 @@ li, a, button
 
 header
 {
-    background-image: linear-gradient(rgb(0, 0, 0), rgb(18, 0, 51));
+    background-image: linear-gradient(rgb(0, 0, 0), rgb(20, 0, 58));
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -84,7 +84,7 @@ footer{
     padding: 20px;
     height: 100%;
     text-align: center;
-    background-image: linear-gradient( rgb(18, 0, 51), rgb(0, 0, 0));
+    background-image: linear-gradient( rgb(20, 0, 58), rgb(0, 0, 0));
 }
 
 .footer_text{
@@ -129,6 +129,10 @@ footer{
     color: #FF0000;
 }
 
+#itch:hover{
+    color: rgb(250,92,92);
+}
+
 
 .title{
     text-shadow: #000000;
@@ -138,7 +142,7 @@ footer{
 }
 
 .text{
-    padding: 25px;
+    padding: 15px;
     text-align: center;
     color: white;
     font-weight: 500;
@@ -146,7 +150,7 @@ footer{
 }
 
 .text_about{
-    height: 690px;
+    height: 890px;
     padding: 25px;
     border-radius: 25px;
     margin: 0px 25px;
