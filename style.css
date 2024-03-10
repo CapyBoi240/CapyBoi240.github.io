@@ -16,13 +16,6 @@ header
     padding: 30px 5%;
 }
 
-footer{
-    height: 100px;
-    padding: 20px;
-    text-align: center;
-    background-image: linear-gradient( rgb(20, 0, 58), rgb(0, 0, 0));
-}
-
 .image{
     height: 900x;
     text-align: center;
