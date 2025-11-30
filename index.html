@@ -9,21 +9,15 @@
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     <script src="https://kit.fontawesome.com/176086dfe1.js" crossorigin="anonymous"></script>  
     <style>
-        /* Define the Inter font family */
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
-        #site-header {
-            background-color: rgba(15, 23, 42, 0); /* Transparent at top */
-        }
 
         body {
             font-family: 'Inter', sans-serif;
-            /* Deep Space Gradient Background */
             background: linear-gradient(180deg, #0f172a 0%, #020617 100%);
-            color: #e2e8f0; /* Light gray text for contrast */
+            color: #e2e8f0;
             min-height: 100vh;
         }
 
-        /* Custom style for the subtle glow effect on the title and buttons */
         .moon-glow {
             text-shadow: 0 0 10px rgba(126, 34, 206, 0.7), 0 0 20px rgba(126, 34, 206, 0.5);
         }
@@ -38,15 +32,20 @@
             box-shadow: 0 0 25px rgba(139, 92, 246, 0.7);
         }
 
-        /* Icon styling to apply the celestial theme */
         .icon-celestial {
-            color: #8b5cf6; /* Violet-500 */
+            color: #8b5cf6;
+        }
+
+        /* Transparent header at top */
+        #site-header {
+            background-color: rgba(0,0,0,0);
+            transition: background-color 0.3s ease, border-bottom 0.3s ease;
         }
     </style>
 </head>
 <body class="antialiased">
 
-    <header id="site-header" class="container mx-auto px-4 sm:px-6 lg:px-8 py-6 flex justify-between items-center z-10 relative transition-colors duration-300">
+    <header id="site-header" class="container mx-auto px-4 sm:px-6 lg:px-8 py-6 flex justify-between items-center z-10 relative">
         <div class="flex items-center space-x-2">
             <img src="Icon-removebg-preview.png" alt="" width="64" style="margin-right: 25px;">
             <h1 class="text-2xl font-bold text-white tracking-wider">Moonlight Studios</h1>
@@ -161,7 +160,8 @@
         <section id="about" class="pt-16 pb-24 text-center">
             <h3 class="text-4xl font-bold text-white mb-6">About Us</h3>
             <p class="text-xl text-gray-400 mb-12 max-w-4xl mx-auto">
-Moonlight Studios creates focused, story-first games. We blend challenging mechanics with atmospheric worlds.            </p>
+                Moonlight Studios creates focused, story-first games. We blend challenging mechanics with atmospheric worlds.
+            </p>
             
             <div class="grid md:grid-cols-3 gap-8 text-left">
                 <div class="bg-gray-800 p-6 rounded-lg shadow-xl border-t-4 border-indigo-600">
@@ -255,58 +255,25 @@ Moonlight Studios creates focused, story-first games. We blend challenging mecha
                 <a href="https://x.com/Moonlight2510_" class="text-gray-400 hover:text-indigo-400 transition" aria-label="Follow us on Twitter"><i data-lucide="twitter" class="w-6 h-6"></i></a>
                 <a href="https://www.youtube.com/@moonlightstudios2510/videos" class="text-gray-400 hover:text-indigo-400 transition" aria-label="Subscribe to our YouTube channel"><i data-lucide="youtube" class="w-6 h-6"></i></a>
                 <a href="https://www.instagram.com/moonlight.studios2510/?next=%2F" class="text-gray-400 hover:text-indigo-400 transition" aria-label="Follow us on Instagram"><i data-lucide="instagram" class="w-6 h-6"></i></a>
-                <a href="#" class="text-gray-400 hover:text-indigo-400 transition" aria-label="Join our Discord server"><i class="fa-brands fa-discord"></i></a>
-
             </div>
-            <p class="text-sm text-gray-500">
-                &copy; 2025 Moonlight Studios. All rights reserved.
-            </p>
-            <div class="mt-2 text-xs text-gray-600">
-                <a href="#contact" class="hover:text-gray-400">Contact Us</a> | <a href="privacy_policy.html" class="hover:text-gray-400">Privacy Policy</a> | <a href="terms_of_service.html" class="hover:text-gray-400">Terms of Service</a>
-            </div>
+            <p class="text-gray-500 text-sm">&copy; 2025 Moonlight Studios. All rights reserved.</p>
         </div>
     </footer>
 
     <script>
-        // 1. Initialize Lucide icons to ensure they render correctly.
-        if (typeof lucide !== 'undefined' && lucide.createIcons) {
-            lucide.createIcons();
-        }
-        
-        // 2. Functionality to show hidden devlogs
-        const viewMoreButton = document.getElementById('view-more-devlogs');
+        // Activate lucide icons
+        lucide.replace();
 
-        if (viewMoreButton) {
-            viewMoreButton.addEventListener('click', function() {
-                // Select all devlogs with the marker class 'devlog-extra'
-                const hiddenDevlogs = document.querySelectorAll('.devlog-extra');
-                
-                hiddenDevlogs.forEach(devlog => {
-                    // Remove the Tailwind 'hidden' class to make them visible
-                    devlog.classList.remove('hidden');
-                });
-
-                // Hide the button itself after all logs are shown
-                viewMoreButton.classList.add('hidden');
-            });
-        
+        // Transparent header scrolling effect
         const header = document.getElementById('site-header');
-    
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 20) { // scroll down threshold
+            if (window.scrollY > 20) {
                 header.classList.add('bg-gray-900', 'border-b', 'border-indigo-900/50');
             } else {
                 header.classList.remove('bg-gray-900', 'border-b', 'border-indigo-900/50');
             }
         });
-
-   
-        // The form submission handler remains removed, relying on Formspree
     </script>
+
 </body>
-
 </html>
-
-
-
-
