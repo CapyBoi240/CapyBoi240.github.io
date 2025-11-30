@@ -256,15 +256,38 @@
         </div>
     </footer>
     
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            lucide.replace();
-        });
-    </script>
+
+    <!-- INLINE SCRIPT FOR GUARANTEED ICON INITIALIZATION AND NEW LOGIC -->
+    <script>
+        // 1. Initialize Lucide icons to ensure they render correctly.
+        if (typeof lucide !== 'undefined' && lucide.createIcons) {
+            lucide.createIcons();
+        }
+        
+        // 2. Functionality to show hidden devlogs
+        const viewMoreButton = document.getElementById('view-more-devlogs');
+
+        if (viewMoreButton) {
+            viewMoreButton.addEventListener('click', function() {
+                // Select all devlogs with the marker class 'devlog-extra'
+                const hiddenDevlogs = document.querySelectorAll('.devlog-extra');
+                
+                hiddenDevlogs.forEach(devlog => {
+                    // Remove the Tailwind 'hidden' class to make them visible
+                    devlog.classList.remove('hidden');
+                });
+
+                // Hide the button itself after all logs are shown
+                viewMoreButton.classList.add('hidden');
+            });
+        }
+        
+        // The form submission handler remains removed, relying on Formspree
+    </script>
 
 </body>
 </html>
+
 
 
 
