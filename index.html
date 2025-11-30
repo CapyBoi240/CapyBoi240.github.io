@@ -38,8 +38,9 @@
 
         /* Transparent header at top */
         .header {
-            background-color: rgba(0,0,0,0);
-            transition: background-color 0.3s ease, border-bottom 0.3s ease;
+            background-color: transparent !important;
+            border-bottom: none !important;
+            transition: none; /* optional, remove smooth effect */
         }
     </style>
 </head>
@@ -263,18 +264,9 @@
     <script>
         // Activate lucide icons
         lucide.replace();
-
-        // Transparent header scrolling effect
-        const header = document.getElementById('site-header');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 20) {
-                header.classList.add('bg-gray-900', 'border-b', 'border-indigo-900/50');
-            } else {
-                header.classList.remove('bg-gray-900', 'border-b', 'border-indigo-900/50');
-            }
-        });
     </script>
 
 </body>
 </html>
+
 
