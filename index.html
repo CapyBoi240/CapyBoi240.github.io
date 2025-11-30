@@ -11,7 +11,10 @@
     <style>
         /* Define the Inter font family */
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
-        
+        #site-header {
+            background-color: rgba(15, 23, 42, 0); /* Transparent at top */
+        }
+
         body {
             font-family: 'Inter', sans-serif;
             /* Deep Space Gradient Background */
@@ -43,7 +46,7 @@
 </head>
 <body class="antialiased">
 
-    <header class="container mx-auto px-4 sm:px-6 lg:px-8 py-6 flex justify-between items-center z-10 relative">
+    <header id="site-header" class="container mx-auto px-4 sm:px-6 lg:px-8 py-6 flex justify-between items-center z-10 relative transition-colors duration-300">
         <div class="flex items-center space-x-2">
             <img src="Icon-removebg-preview.png" alt="" width="64" style="margin-right: 25px;">
             <h1 class="text-2xl font-bold text-white tracking-wider">Moonlight Studios</h1>
@@ -204,7 +207,7 @@ Moonlight Studios creates focused, story-first games. We blend challenging mecha
                     <h4 class="font-semibold text-white">Sound and Music Designers</h4>
                 </div>
             </div>
-            <a href="#" class="mt-8 inline-block px-8 py-3 font-semibold text-white bg-indigo-600 rounded-full hover:bg-indigo-700 cta-button">
+            <a href="#contact" class="mt-8 inline-block px-8 py-3 font-semibold text-white bg-indigo-600 rounded-full hover:bg-indigo-700 cta-button">
                 See All Open Roles
             </a>
         </section>
@@ -286,13 +289,24 @@ Moonlight Studios creates focused, story-first games. We blend challenging mecha
                 // Hide the button itself after all logs are shown
                 viewMoreButton.classList.add('hidden');
             });
-        }
         
+        const header = document.getElementById('site-header');
+    
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) { // scroll down threshold
+                header.classList.add('bg-gray-900', 'border-b', 'border-indigo-900/50');
+            } else {
+                header.classList.remove('bg-gray-900', 'border-b', 'border-indigo-900/50');
+            }
+        });
+
+   
         // The form submission handler remains removed, relying on Formspree
     </script>
 </body>
 
 </html>
+
 
 
 
