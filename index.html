@@ -32,15 +32,18 @@
             color: #8b5cf6;
         }
         .top-moon-glow {
-            position: fixed; /* stays at top of viewport */
-            top: 0;
+            position: absolute; /* Changed to absolute to stay relative to the body/document, but fixed would also work if you want it to scroll with the viewport */
+            top: -100px; /* Start the glow effect well above the visible content */
             left: 50%;
             transform: translateX(-50%);
             width: 100vw;
-            height: 280px; /* adjust height as needed */
-            background: radial-gradient(circle at top, rgba(139,92,246,0.3), transparent 70%);
+            height: 400px; /* Increased height to make the fade longer */
+            /* Adjusting the radial gradient to fade more slowly */
+            background: radial-gradient(circle at center top, rgba(139,92,246,0.3) 0%, transparent 65%);
             pointer-events: none;
-            z-index: 0; /* behind all content */
+            z-index: 0;
+            /* Optional: Ensure the glow spans the full width and overflows correctly */
+            overflow: hidden; 
         }
 
         #site-header, main {
@@ -274,6 +277,7 @@
 
 </body>
 </html>
+
 
 
 
