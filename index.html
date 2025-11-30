@@ -31,20 +31,7 @@
         .icon-celestial {
             color: #8b5cf6;
         }
-        .top-moon-glow {
-            position: absolute; /* Changed to absolute to stay relative to the body/document, but fixed would also work if you want it to scroll with the viewport */
-            top: -100px; /* Start the glow effect well above the visible content */
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100vw;
-            height: 400px; /* Increased height to make the fade longer */
-            /* Adjusting the radial gradient to fade more slowly */
-            background: radial-gradient(circle at center top, rgba(139,92,246,0.3) 0%, transparent 65%);
-            pointer-events: none;
-            z-index: 0;
-            /* Optional: Ensure the glow spans the full width and overflows correctly */
-            overflow: hidden; 
-        }
+
 
         #site-header, main {
             position: relative;
@@ -54,7 +41,6 @@
     </style>
 </head>
 <body class="antialiased">
-    <div class="top-moon-glow pointer-events-none"></div>
     <header id="site-header" class="container mx-auto px-4 sm:px-6 lg:px-8 py-6 flex justify-between items-center z-10 relative bg-transparent border-none">
         <div class="flex items-center space-x-2">
             <img src="Icon-removebg-preview.png" alt="" width="64" style="margin-right: 25px;">
@@ -277,6 +263,7 @@
 
 </body>
 </html>
+
 
 
 
