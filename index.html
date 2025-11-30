@@ -60,21 +60,25 @@
 
     <main class="container mx-auto px-4 sm:px-6 lg:px-8">
         
-    <section class="py-24 text-center relative overflow-hidden">
-        <div class="relative z-10">
-            <h2 class="text-5xl sm:text-7xl font-extrabold text-white mb-6 leading-tight">
-                <span class="block ">Moonlight Studios</span>
-            </h2>
-            <p class="text-xl sm:text-2xl text-indigo-200 mb-10 max-w-3xl mx-auto">
-                Handcrafted Pixel Worlds.
-            </p>
-            <a href="#projects" class="inline-block px-10 py-4 text-lg font-semibold text-white bg-indigo-600 rounded-full hover:bg-indigo-700 cta-button">
-                Explore Our Games
-            </a>
-        </div>
-    
-        <!-- Removed the glowing moon div -->
-    </section>
+        <section class="py-24 text-center relative overflow-hidden">
+            <div class="relative z-10">
+                <h2 class="text-5xl sm:text-7xl font-extrabold text-white mb-6 leading-tight">
+                    <span class="block ">Moonlight Studios</span>
+                </h2>
+                <p class="text-xl sm:text-2xl text-indigo-200 mb-10 max-w-3xl mx-auto">
+                    Handcrafted Pixel Worlds.
+                </p>
+                <a href="#projects" class="inline-block px-10 py-4 text-lg font-semibold text-white bg-indigo-600 rounded-full hover:bg-indigo-700 cta-button">
+                    Explore Our Games
+                </a>
+            </div>
+        
+            <!-- Subtle centered glow -->
+            <div class="absolute inset-0 flex justify-center items-center pointer-events-none">
+                <div class="w-40 h-40 sm:w-56 sm:h-56 bg-indigo-700 rounded-full opacity-20 blur-2xl"></div>
+            </div>
+        </section>
+
 
 
         <section id="projects" class="pt-16 pb-24">
@@ -262,6 +266,7 @@
 
 </body>
 </html>
+
 
 
 
