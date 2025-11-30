@@ -35,17 +35,27 @@
         .icon-celestial {
             color: #8b5cf6;
         }
-
-        /* Transparent header at top */
-        #header {
-            background-color: transparent !important;
-            border-bottom: none !important;
-            transition: none; /* optional, remove smooth effect */
+        .top-moon-glow {
+            position: fixed; /* stays at top of viewport */
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100vw;
+            height: 400px; /* adjust height as needed */
+            background: radial-gradient(circle at top, rgba(139,92,246,0.3), transparent 70%);
+            pointer-events: none;
+            z-index: 0; /* behind all content */
         }
+
+        #site-header, main {
+            position: relative;
+            z-index: 10; /* ensures content is above glow */
+        }
+
     </style>
 </head>
 <body class="antialiased">
-
+    <div class="top-moon-glow pointer-events-none"></div>
     <header id="site-header" class="container mx-auto px-4 sm:px-6 lg:px-8 py-6 flex justify-between items-center z-10 relative bg-transparent border-none">
         <div class="flex items-center space-x-2">
             <img src="Icon-removebg-preview.png" alt="" width="64" style="margin-right: 25px;">
@@ -268,6 +278,7 @@
 
 </body>
 </html>
+
 
 
 
