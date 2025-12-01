@@ -53,14 +53,31 @@
             <a href="#careers" class="text-gray-300 hover:text-indigo-400 transition duration-150">Careers</a>
             <a href="#contact" class="text-gray-300 hover:text-indigo-400 transition duration-150">Contact</a>
         </nav>
-        <nav id="mobile-menu" class="md:hidden hidden flex-col space-y-4 mt-4 text-center">
-            <a href="#projects" class="text-gray-300 hover:text-indigo-400">Projects</a>
-            <a href="#devlogs" class="text-gray-300 hover:text-indigo-400">Devlogs</a>
-            <a href="#about" class="text-gray-300 hover:text-indigo-400">About Us</a>
-            <a href="#careers" class="text-gray-300 hover:text-indigo-400">Careers</a>
-            <a href="#contact" class="text-gray-300 hover:text-indigo-400">Contact</a>
+<!-- Mobile Menu Button -->
+<button id="mobile-menu-toggle" class="md:hidden text-gray-300 hover:text-indigo-400 transition duration-150">
+    <svg id="menu-icon" class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path id="menu-icon-bars" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6h16M4 12h16m0 6H4" />
+    </svg>
+</button>
+
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="fixed inset-0 bg-black/60 backdrop-blur-md z-40 hidden">
+    <div class="absolute top-0 right-0 w-64 h-full bg-gray-900 shadow-xl border-l border-indigo-800 p-6 transform translate-x-full transition-all duration-300"
+         id="mobile-menu-panel">
+
+        <h2 class="text-xl font-bold text-white mb-6">Menu</h2>
+
+        <nav class="flex flex-col space-y-5 text-lg font-medium">
+            <a href="#projects" class="text-gray-300 hover:text-indigo-400 transition">Projects</a>
+            <a href="#devlogs" class="text-gray-300 hover:text-indigo-400 transition">Devlogs</a>
+            <a href="#about" class="text-gray-300 hover:text-indigo-400 transition">About Us</a>
+            <a href="#careers" class="text-gray-300 hover:text-indigo-400 transition">Careers</a>
+            <a href="#contact" class="text-gray-300 hover:text-indigo-400 transition">Contact</a>
         </nav>
-            <button id="mobile-menu-button" class="md:hidden text-gray-300 hover:text-indigo-400 transition duration-150">
+    </div>
+</div>
+
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
         </button>
     </header>
@@ -293,18 +310,41 @@
             });
         }
          // Mobile menu toggle
-        const mobileButton = document.getElementById("mobile-menu-button");
-        const mobileMenu = document.getElementById("mobile-menu");
-        
-        mobileButton.addEventListener("click", () => {
-            mobileMenu.classList.toggle("hidden");
+
+        const toggleBtn = document.getElementById("mobile-menu-toggle");
+        const menu = document.getElementById("mobile-menu");
+        const panel = document.getElementById("mobile-menu-panel");
+    
+        let isOpen = false;
+    
+        toggleBtn.addEventListener("click", () => {
+            isOpen = !isOpen;
+    
+            if (isOpen) {
+                menu.classList.remove("hidden");
+                setTimeout(() => panel.classList.remove("translate-x-full"), 10);
+            } else {
+                panel.classList.add("translate-x-full");
+                setTimeout(() => menu.classList.add("hidden"), 300);
+            }
         });
+    
+        // Close menu when clicking outside panel
+        menu.addEventListener("click", e => {
+            if (!panel.contains(e.target)) {
+                panel.classList.add("translate-x-full");
+                setTimeout(() => menu.classList.add("hidden"), 300);
+                isOpen = false;
+            }
+        });
+
 
         // The form submission handler remains removed, relying on Formspree
     </script>
 
 </body>
 </html>
+
 
 
 
